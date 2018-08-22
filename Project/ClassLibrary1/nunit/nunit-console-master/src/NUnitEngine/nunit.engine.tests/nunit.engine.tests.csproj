@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NUnit.Engine.Tests</RootNamespace>
+    <AssemblyName>nunit.engine.tests</AssemblyName>
+    <TargetFrameworks>net35</TargetFrameworks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\..\..\bin\$(Configuration)\</OutputPath>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\nunit.snk</AssemblyOriginatorKeyFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>Full</DebugType>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net35'">
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" Version="2.0.3" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CommonAssemblyInfo.cs" LinkBase="Properties" />
+    <Compile Include="..\EngineVersion.cs" LinkBase="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mock-assembly\mock-assembly.csproj" />
+    <ProjectReference Include="..\nunit.engine.api\nunit.engine.api.csproj" />
+    <ProjectReference Include="..\nunit.engine\nunit.engine.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EngineTests.nunit">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="alt.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <Net20Files Include="..\..\..\bin\$(Configuration)\net20\*" />
+    </ItemGroup>
+    <Microsoft.Build.Tasks.Copy SourceFiles="@(Net20Files)" DestinationFolder="$(TargetDir)"/>
+  </Target>
+</Project>

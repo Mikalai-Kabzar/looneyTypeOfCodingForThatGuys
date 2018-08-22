@@ -55,7 +55,7 @@ namespace Project.UI
             Instance.WebDriver.Manage().Window.FullScreen();
         }
 
-        public void stopBrowser()
+        public void StopBrowser()
         {
             try
             {
@@ -70,9 +70,14 @@ namespace Project.UI
             }
         }
 
+        public IWebElement FindElement(By by)
+        {
+            return WebDriver.FindElement(by);
+        }
+
         public static void Main(string[] args)
         {
-            Instance.WebDriver.Navigate().GoToUrl(" https://comaqa.by");
+
         }
     }
 }

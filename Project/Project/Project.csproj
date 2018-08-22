@@ -62,9 +62,17 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Config.settings</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\Objects\SearchResult.cs" />
+    <Compile Include="Pages\SearchPage.cs" />
+    <Compile Include="Services\MainService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="UI\Browser.cs" />
     <Compile Include="UI\BrowserType.cs" />
+    <Compile Include="UI\Elements\WebElement.cs" />
+    <Compile Include="UI\Elements\WebElements.cs" />
+    <Compile Include="UI\Wait.cs" />
     <Compile Include="UI\WebDriverFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
