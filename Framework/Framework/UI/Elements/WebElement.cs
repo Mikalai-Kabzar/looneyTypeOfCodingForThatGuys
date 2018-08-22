@@ -1,13 +1,13 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenQA.Selenium;
 
-namespace Project.UI.Elements
+namespace Framework.UI.Elements
 {
-    class WebElement
+    public class WebElement
     {
         public By Selector;
 
@@ -15,7 +15,7 @@ namespace Project.UI.Elements
 
         public WebElement(By selector)
         {
-            Selector = selector; 
+            Selector = selector;
         }
 
         public void Navigate(string url)

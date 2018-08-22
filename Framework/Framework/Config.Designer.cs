@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project {
+namespace Framework {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -37,18 +37,6 @@ namespace Project {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".\\..\\..\\..\\Resources")]
-        public string directory {
-            get {
-                return ((string)(this["directory"]));
-            }
-            set {
-                this["directory"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("10000")]
         public int timeout {
             get {
@@ -56,6 +44,18 @@ namespace Project {
             }
             set {
                 this["timeout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\..\\..\\..\\Resources")]
+        public string directory {
+            get {
+                return ((string)(this["directory"]));
+            }
+            set {
+                this["directory"] = value;
             }
         }
     }

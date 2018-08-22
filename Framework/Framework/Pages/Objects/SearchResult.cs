@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace Framework.Pages.Objects
 {
-    class Class1
+    public class SearchResult
     {
-        public static void Main(string[] args)
-        {
-
-        }
+        public string Title;
     }
 }

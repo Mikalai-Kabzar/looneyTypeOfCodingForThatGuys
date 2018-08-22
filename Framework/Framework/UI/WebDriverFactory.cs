@@ -1,17 +1,20 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.IO;
-using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static Framework.UI.BrowserType;
 
-namespace Project.UI
+namespace Framework.UI
 {
-    public class WebDriverFactory
+    public  class WebDriverFactory
     {
         public readonly IWebDriver WebDriver;
 
         public static IWebDriver GetDriver(Driver driverType, DriverOptions options)
-        {            
+        {
             var directory = AppDomain.CurrentDomain.BaseDirectory + Config.Default.directory;
             var timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
             switch (driverType)

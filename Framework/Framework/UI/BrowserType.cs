@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace Framework.UI
 {
-    class Class1
+    public class BrowserType
     {
-        public static void Main(string[] args)
+        public enum Driver
         {
-
+            CHROME,
+            FIREFOX
         }
     }
 }

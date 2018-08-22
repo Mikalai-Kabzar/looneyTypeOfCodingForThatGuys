@@ -1,11 +1,13 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-namespace Project.UI
+using static Framework.UI.BrowserType;
+
+namespace Framework.UI
 {
     public class Browser
     {

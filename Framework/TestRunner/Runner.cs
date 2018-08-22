@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Pages.Objects
+namespace TestRunner
 {
-    public class SearchResult
+    class Runner
     {
-        public string Title;
+        public static void Main(string[] args)
+        {
+        }
     }
 }

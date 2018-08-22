@@ -6,10 +6,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{557E5D26-AF60-4CB0-99BE-E1A196A90EE2}</ProjectGuid>
+    <ProjectGuid>{1D5CEFA2-A65B-4F8E-B505-A7CB664CA4CB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Project</RootNamespace>
-    <AssemblyName>Project</AssemblyName>
+    <RootNamespace>Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,11 +37,29 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Config.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Config.Designer.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\ContactUsPage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="Pages\Objects\SearchResult.cs" />
+    <Compile Include="Pages\SearchPage.cs" />
+    <Compile Include="Services\Service.cs" />
+    <Compile Include="Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Config.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Browser.cs" />
+    <Compile Include="UI\BrowserType.cs" />
+    <Compile Include="UI\Elements\WebElement.cs" />
+    <Compile Include="UI\Elements\WebElements.cs" />
+    <Compile Include="UI\Wait.cs" />
+    <Compile Include="UI\WebDriverFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -55,25 +73,6 @@
     <Reference Include="WebDriver.Support, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.3.14.0\lib\net45\WebDriver.Support.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Config.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Config.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MainPage.cs" />
-    <Compile Include="Pages\Objects\SearchResult.cs" />
-    <Compile Include="Pages\SearchPage.cs" />
-    <Compile Include="Services\MainService.cs" />
-    <Compile Include="Services\SearchService.cs" />
-    <Compile Include="Start.cs" />
-    <Compile Include="UI\Browser.cs" />
-    <Compile Include="UI\BrowserType.cs" />
-    <Compile Include="UI\Elements\WebElement.cs" />
-    <Compile Include="UI\Elements\WebElements.cs" />
-    <Compile Include="UI\Wait.cs" />
-    <Compile Include="UI\WebDriverFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

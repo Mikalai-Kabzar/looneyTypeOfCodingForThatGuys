@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.UI.Elements
+namespace Framework.UI.Elements
 {
     public class WebElements
     {
