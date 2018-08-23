@@ -1,6 +1,0 @@
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\bin\Debug\Project1.exe.config
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\bin\Debug\Project1.exe
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\bin\Debug\Project1.pdb
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\obj\Debug\Project1.csproj.CoreCompileInputs.cache
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\obj\Debug\Project1.exe
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\Project1\obj\Debug\Project1.pdb

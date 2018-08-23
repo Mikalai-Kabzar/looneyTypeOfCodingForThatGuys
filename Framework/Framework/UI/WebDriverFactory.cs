@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +23,10 @@ namespace Framework.UI
             {
                 case Driver.CHROME:
                     return new ChromeDriver(ChromeDriverService.CreateDefaultService(directory), options as ChromeOptions, timeout);
-                    //case Driver.Firefox:
-                    //    return new FirefoxDriver(FirefoxDriverService.CreateDefaultService(directory), options as FirefoxOptions, timeout);
+                case Driver.FIREFOX:
+                    return new FirefoxDriver(FirefoxDriverService.CreateDefaultService(directory), options as FirefoxOptions, timeout);
+                case Driver.EDGE:
+                    return new EdgeDriver(EdgeDriverService.CreateDefaultService(directory), options as EdgeOptions, timeout);
             }
 
             return null;

@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Framework" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Framework" GeneratedClassName="Config">
   <Profiles />
   <Settings>
     <Setting Name="Browser" Type="System.String" Scope="User">
@@ -10,6 +10,21 @@
     </Setting>
     <Setting Name="directory" Type="System.String" Scope="User">
       <Value Profile="(Default)">.\..\..\..\Resources</Value>
+    </Setting>
+    <Setting Name="Console" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\..\..\..\..\..\..\nunit3-console\nunit3-console.exe</Value>
+    </Setting>
+    <Setting Name="Tests" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Framework.exe</Value>
+    </Setting>
+    <Setting Name="Logs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Logs</Value>
+    </Setting>
+    <Setting Name="Rep" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reports</Value>
+    </Setting>
+    <Setting Name="Reports" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reports</Value>
     </Setting>
   </Settings>
 </SettingsFile>

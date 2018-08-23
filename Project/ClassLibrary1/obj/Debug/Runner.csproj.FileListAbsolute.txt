@@ -1,6 +1,0 @@
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\bin\Debug\ClassLibrary1.dll
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\obj\Debug\Runner.csproj.CoreCompileInputs.cache
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\obj\Debug\ClassLibrary1.dll
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
-D:\TicketMasterTasks\Framework\looneyTypeOfCodingForThatGuys-master\Project\ClassLibrary1\obj\Debug\Runner.csprojAssemblyReference.cache

@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +33,14 @@ namespace Framework.UI
                             browser = Driver.CHROME;
                             options = new ChromeOptions();
                             break;
-                        //case "FIREFOX":
-                        //    browser = Driver.FIREFOX;
-                        //    options = new FirefoxOptions();
-                        //    break;
+                        case "FIREFOX":
+                            browser = Driver.FIREFOX;
+                            options = new FirefoxOptions();
+                            break;
+                        case "EDGE":
+                            browser = Driver.EDGE;
+                            options = new EdgeOptions();
+                            break;
                         default:
                             browser = Driver.CHROME;
                             options = new ChromeOptions();
@@ -75,11 +81,6 @@ namespace Framework.UI
         public IWebElement FindElement(By by)
         {
             return WebDriver.FindElement(by);
-        }
-
-        public static void Main(string[] args)
-        {
-
         }
     }
 }

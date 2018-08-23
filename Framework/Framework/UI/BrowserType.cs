@@ -11,7 +11,8 @@ namespace Framework.UI
         public enum Driver
         {
             CHROME,
-            FIREFOX
+            FIREFOX,
+            EDGE
         }
     }
 }

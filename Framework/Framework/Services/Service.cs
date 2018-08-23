@@ -1,5 +1,4 @@
 ﻿using Framework.Pages;
-using Framework.Pages.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,19 +21,11 @@ namespace Framework.Services
             SearchPage.EnterButtonEmulate();
         }
 
-        public List<SearchResult> AllResultsGetTitlesWithSeqrchQuery(string textForSearch, string url)
-        {
-            MainPage.Navigate(url);
-            MainPage.ClickSearchLink();
-            SearchPage.SearchInputSendKeys(textForSearch);
-            SearchPage.EnterButtonEmulate();
-            return SearchPage.GetSearchResultHeaders();
-        }
-
         public string GetItemName(string url)
         {
             MainPage.Navigate(url);
-            MainPage.ClickChangeLanguageEnglish();
+            //MainPage.ClickChangeLanguageEnglish();
+            MainPage.ClickChangeLanguageRussian();
             return MainPage.GetItemName();
         }
 
