@@ -12,6 +12,7 @@ namespace Framework.UI
     {
         public static void IsElementPresense(By locator, TimeSpan timeout)
         {
+            _logger.Debug("Wait for page loading");
             new WebDriverWait(Browser.Instance.WebDriver, timeout)
                 .Until(driver => driver.FindElement(locator).Displayed);
         }

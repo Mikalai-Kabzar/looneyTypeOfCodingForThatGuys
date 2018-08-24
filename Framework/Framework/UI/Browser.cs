@@ -56,6 +56,8 @@ namespace Framework.UI
         public Browser(IWebDriver webDriver)
         {
             WebDriver = webDriver;
+            _logger = new Logger(typeof(Browser));
+            _logger.Debug(BrowserName + " instance created");
         }
 
         public void MaximizeBrowserWindow()
@@ -76,6 +78,7 @@ namespace Framework.UI
             {
                 _instanse = null;
             }
+            _logger.Debug(BrowserName + " instance closed");
         }
 
         public IWebElement FindElement(By by)

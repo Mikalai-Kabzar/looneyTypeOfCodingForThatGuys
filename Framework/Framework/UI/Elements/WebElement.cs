@@ -16,25 +16,30 @@ namespace Framework.UI.Elements
         public WebElement(By selector)
         {
             Selector = selector;
+            _logger = new Logger(typeof(WebElement));
         }
 
         public void Navigate(string url)
         {
+            _logger.Info($"Navigate to {url}");
             Browser.Instance.WebDriver.Navigate().GoToUrl(url);
         }
 
         public void Click()
         {
+            _logger.Info($"Click element {Selector}");
             BrowserElement.Click();
         }
 
         public void SendKeys(String text)
         {
+            _logger.Info($"Send keys {text} to element {Selector}");
             BrowserElement.SendKeys(text);
         }
 
         public string GetText()
         {
+            _logger.Info($"Get text of element {Selector}");
             return BrowserElement.Text;
         }
     }

@@ -17,10 +17,12 @@ namespace Framework.UI.Elements
         public WebElements(By selector)
         {
             Selector = selector;
+            _logger = new Logger(typeof(WebElement));
         }
 
         public string GetText(int index)
         {
+            _logger.Debug($"Get text from elements {Selector} with index {index}");
             return BrowserElements[index].Text;
         }
     }

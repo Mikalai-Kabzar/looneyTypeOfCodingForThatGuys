@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="TestRunner\Runner.cs" />
     <Compile Include="Tests\Tests.cs" />
+    <Compile Include="Tools\Logger.cs" />
     <Compile Include="UI\Browser.cs" />
     <Compile Include="UI\BrowserType.cs" />
     <Compile Include="UI\Elements\WebElement.cs" />
