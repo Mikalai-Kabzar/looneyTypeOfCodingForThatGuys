@@ -16,6 +16,8 @@ namespace Framework.Pages
         private static readonly string EnglishLanguageChangeItemXPathLocator = ".//a[@hreflang ='en-US']";        
         private static readonly string ItemNameXPathLocator = ".//a[contains(@href, 'video')]";
 
+        Wait wait = new Wait();
+
         private static readonly string ContaclUsLinkXPathLocation = ".//a[contains(@href, 'contact')]";
 
         private WebElement SearchLink = new WebElement(By.XPath(SarchLinkXPathLocator));
@@ -32,6 +34,7 @@ namespace Framework.Pages
 
         public void ClickSearchLink()
         {
+            //wait.IsElementPresense(By.XPath(SarchLinkXPathLocator), TimeSpan.FromSeconds(5));
             SearchLink.Click();
         }
 

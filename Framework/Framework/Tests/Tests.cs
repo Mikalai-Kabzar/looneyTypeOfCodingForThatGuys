@@ -2,8 +2,8 @@
 using Framework.Services;
 using Framework.UI;
 using log4net;
-using NUnit.Allure.Core;
 using NUnit.Framework;
+using System.Net;
 
 namespace Tests
 {
@@ -93,17 +93,17 @@ namespace Tests
         //        Is.EqualTo(_invalidFieldsMessageRu));
         //}
 
-        //[Test]
-        //public void VerifyEmptySearchInput()
-        //{
-        //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
-        //}
-
         [Test]
-        public void VerifyEmptySearchInputFail()
+        public void VerifyEmptySearchInput()
         {
-            Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.EqualTo(InvalidText));
+            Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
         }
+
+        //[Test]
+        //public void VerifyEmptySearchInputFail()
+        //{
+        //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.EqualTo(InvalidText));
+        //}
 
         [TearDown]
         public void CloseBrowser()
@@ -111,5 +111,20 @@ namespace Tests
             log.Info("Test ending...");
             Browser.Instance.StopBrowser();
         }
+
+        //[Test]
+        //public void test()
+        //{
+        //    var webClient = new NHtmlUnit.WebClient(BrowserVersion.EDGE);
+
+        //    webClient.Options.JavaScriptEnabled = false;
+        //    webClient.Options.ActiveXNative = false;
+        //    webClient.Options.CssEnabled = false;
+
+        //    var page = webClient.GetHtmlPage("http://wikipedia.org");
+        //    var anchor = page.GetFirstByXPath("//a");
+
+        //    Assert.That(anchor, Is.TypeOf<NHtmlUnit.Html.HtmlAnchor>());
+        //}
     }
 }

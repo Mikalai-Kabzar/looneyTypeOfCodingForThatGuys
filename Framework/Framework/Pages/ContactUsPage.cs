@@ -33,6 +33,8 @@ namespace Framework.Pages
 
         private TimeSpan timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
 
+        private Wait wait = new Wait();
+
         public void TypeName(string name)
         {
             InputName.SendKeys(name);
@@ -60,13 +62,13 @@ namespace Framework.Pages
 
         public string GetInvalidEmailMessage()
         {
-            Wait.IsElementPresense(By.XPath(InvalidEmailMessageXPathLocator), timeout);
+            wait.IsElementPresense(By.XPath(InvalidEmailMessageXPathLocator), timeout);
             return InvalidEmailMessage.GetText();
         }
 
         public string GetInvalidFieldsMessage()
         {
-            Wait.IsElementPresense(By.CssSelector(InvalidFieldsMessageCSSLocator), timeout);
+            wait.IsElementPresense(By.CssSelector(InvalidFieldsMessageCSSLocator), timeout);
             return InvalidFieldsMessage.GetText();
         }
     }

@@ -25,7 +25,7 @@ namespace Framework {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CHROME")]
+        [global::System.Configuration.DefaultSettingValueAttribute("EDGE")]
         public string Browser {
             get {
                 return ((string)(this["Browser"]));
@@ -92,18 +92,6 @@ namespace Framework {
             }
             set {
                 this["Logs"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Reports")]
-        public string Rep {
-            get {
-                return ((string)(this["Rep"]));
-            }
-            set {
-                this["Rep"] = value;
             }
         }
         

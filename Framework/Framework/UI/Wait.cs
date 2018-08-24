@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Tools;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace Framework.UI
 {
     public class Wait
     {
-        public static void IsElementPresense(By locator, TimeSpan timeout)
+        private readonly Logger _logger = new Logger(typeof(Wait));
+
+        public void IsElementPresense(By locator, TimeSpan timeout)
         {
             _logger.Debug("Wait for page loading");
-            new WebDriverWait(Browser.Instance.WebDriver, timeout)
-                .Until(driver => driver.FindElement(locator).Displayed);
+            new WebDriverWait(Browser.Instance.WebDriver, timeout).Until(ExpectedConditions.ElementIsVisible(locator));
+            // .Until(driver => driver.FindElement(locator).Displayed);
         }
     }
 }

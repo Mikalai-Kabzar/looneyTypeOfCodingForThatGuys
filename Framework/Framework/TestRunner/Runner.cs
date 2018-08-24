@@ -52,7 +52,8 @@ namespace TestRunner
             {
                 Arguments = $"/C allure generate {logs} -o {output}",
                 FileName = Environment.GetEnvironmentVariable("COMSPEC")
-            };
+
+        };
 
             var process = new Process
             {

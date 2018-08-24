@@ -1,19 +1,21 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.PhantomJS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Framework.UI.BrowserType;
+using Framework.Tools;
 
 namespace Framework.UI
 {
     public class Browser
     {
         private static Browser _instanse;
+        private readonly Logger _logger;
         private static string BrowserName = Config.Default.Browser;
 
         public readonly IWebDriver WebDriver;
@@ -39,7 +41,7 @@ namespace Framework.UI
                             break;
                         case "EDGE":
                             browser = Driver.EDGE;
-                            options = new EdgeOptions();
+                            options = new PhantomJSOptions();
                             break;
                         default:
                             browser = Driver.CHROME;
@@ -56,13 +58,14 @@ namespace Framework.UI
         public Browser(IWebDriver webDriver)
         {
             WebDriver = webDriver;
+            WebDriver.Manage().Timeouts().PageLoad = TimeSpan.FromMinutes(1);
             _logger = new Logger(typeof(Browser));
             _logger.Debug(BrowserName + " instance created");
         }
 
         public void MaximizeBrowserWindow()
         {
-            Instance.WebDriver.Manage().Window.FullScreen();
+            Instance.WebDriver.Manage().Window.Maximize();
         }
 
         public void StopBrowser()

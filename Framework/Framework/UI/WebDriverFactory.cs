@@ -1,12 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.PhantomJS;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Framework.UI.BrowserType;
 
 namespace Framework.UI
@@ -26,9 +22,8 @@ namespace Framework.UI
                 case Driver.FIREFOX:
                     return new FirefoxDriver(FirefoxDriverService.CreateDefaultService(directory), options as FirefoxOptions, timeout);
                 case Driver.EDGE:
-                    return new EdgeDriver(EdgeDriverService.CreateDefaultService(directory), options as EdgeOptions, timeout);
+                    return new PhantomJSDriver(PhantomJSDriverService.CreateDefaultService(directory), options as PhantomJSOptions, timeout);
             }
-
             return null;
         }
     }

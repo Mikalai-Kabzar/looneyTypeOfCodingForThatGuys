@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Tools;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Framework.UI.Elements
     public class WebElements
     {
         public By Selector;
+        private readonly Logger _logger;
 
         public List<IWebElement> BrowserElements => Browser.Instance.WebDriver.FindElements(Selector).ToList();
         public int Count => BrowserElements.Count;

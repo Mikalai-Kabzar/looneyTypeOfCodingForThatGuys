@@ -2,10 +2,6 @@
 using Framework.UI.Elements;
 using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Framework.Pages
 {
@@ -24,6 +20,7 @@ namespace Framework.Pages
         private WebElement CleanSearchInputButton = new WebElement(By.XPath(CleanSearchInputXPathLocator));
 
         private TimeSpan timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
+        private Wait wait = new Wait();
 
         public void SearchInputSendKeys(String text)
         {
@@ -37,7 +34,7 @@ namespace Framework.Pages
 
         public string GetNoResultSearchMessage()
         {
-            Wait.IsElementPresense(By.XPath(NoResultMessageXPathLocator), timeout);
+            wait.IsElementPresense(By.XPath(NoResultMessageXPathLocator), timeout);
             return NoResultMessage.GetText();
         }
 
