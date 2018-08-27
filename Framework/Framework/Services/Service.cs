@@ -1,9 +1,5 @@
 ﻿using Framework.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Framework.UI.Elements;
 
 namespace Framework.Services
 {
@@ -11,13 +7,13 @@ namespace Framework.Services
     {
         private SearchPage SearchPage = new SearchPage();
         private MainPage MainPage = new MainPage();
-        ContactUsPage ContactUsPage = new ContactUsPage();
+        private ContactUsPage ContactUsPage = new ContactUsPage();
 
         public void GetMessageThatSearchHasNoResults(string textForSearch, string url)
         {
             MainPage.Navigate(url);
-            MainPage.ClickSearchLink();
-            SearchPage.SearchInputSendKeys(textForSearch);
+            MainPage.SearchLink.Click();
+            SearchPage.SearchInput.SendKeys(textForSearch);
             SearchPage.EnterButtonEmulate();
         }
 
@@ -25,38 +21,38 @@ namespace Framework.Services
         {
             MainPage.Navigate(url);
             //MainPage.ClickChangeLanguageEnglish();
-            MainPage.ClickChangeLanguageRussian();
-            return MainPage.GetItemName();
+            MainPage.RussianLanguageChangeItem.Click();
+            return MainPage.ItemName.GetText();
         }
 
         public string GetInvalidEmailErrorMessage(string url, string email)
         {
             MainPage.Navigate(url);
-            MainPage.ClickContuctUs();
-            ContactUsPage.TypeEmail(email);
-            ContactUsPage.ClickSendMessageButton();
-            return ContactUsPage.GetInvalidEmailMessage();
+            MainPage.ContactUsLink.Click();
+            ContactUsPage.InputEmail.SendKeys(email);
+            ContactUsPage.SendMessageButton.Click();
+            return ContactUsPage.InvalidEmailMessage.GetText();
         }
 
         public string CleanSearchInput(string url, string textForSearch)
         {
             MainPage.Navigate(url);
-            MainPage.ClickSearchLink();
-            SearchPage.SearchInputSendKeys(textForSearch);
-            SearchPage.ClickCleanSearcInputButton();
-            return SearchPage.GetSearchInputValue();
+            MainPage.SearchLink.Click();
+            SearchPage.SearchInput.SendKeys(textForSearch);
+            SearchPage.CleanSearchInputButton.Click();
+            return SearchPage.SearchInput.GetText();
         }
 
         public string GetInvalidFieldsErrorMessage(string url, string name, string email, string theme, string message )
         {
             MainPage.Navigate(url);
-            MainPage.ClickContuctUs();
-            ContactUsPage.TypeName(name);
-            ContactUsPage.TypeEmail(email);
-            ContactUsPage.TypeTheme(theme);
-            ContactUsPage.TypeMessage(message);
-            ContactUsPage.ClickSendMessageButton();
-            return ContactUsPage.GetInvalidFieldsMessage();
+            MainPage.ContactUsLink.Click();
+            ContactUsPage.InputName.SendKeys(name);
+            ContactUsPage.InputEmail.SendKeys(email);
+            ContactUsPage.InputTheme.SendKeys(theme);
+            ContactUsPage.InputMessgae.SendKeys(message);
+            ContactUsPage.SendMessageButton.Click();
+            return ContactUsPage.InvalidFieldsMessage.GetText();
         }
     }
 }

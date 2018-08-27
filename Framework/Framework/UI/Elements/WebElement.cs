@@ -13,6 +13,8 @@ namespace Framework.UI.Elements
         public By Selector;
         private readonly Logger _logger;
 
+        Wait wait = new Wait();
+
         public IWebElement BrowserElement => Browser.Instance.FindElement(Selector);
 
         public WebElement(By selector)

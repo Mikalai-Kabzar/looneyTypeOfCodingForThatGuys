@@ -13,39 +13,15 @@ namespace Framework.Pages
 
         private static readonly string CleanSearchInputXPathLocator = ".//div[@title='clear search']";
 
-        private WebElement SearchInput = new WebElement(By.XPath(SearchInputXPathLocator));
-        private WebElements SearchResults = new WebElements(By.Id(SearchResultsIdLocator));
-        private WebElement NoResultMessage = new WebElement(By.XPath(NoResultMessageXPathLocator));
+        public WebElement SearchInput = new WebElement(By.XPath(SearchInputXPathLocator));
+        public WebElements SearchResults = new WebElements(By.Id(SearchResultsIdLocator));
+        public WebElement NoResultMessage = new WebElement(By.XPath(NoResultMessageXPathLocator));
 
-        private WebElement CleanSearchInputButton = new WebElement(By.XPath(CleanSearchInputXPathLocator));
-
-        private TimeSpan timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
-        private Wait wait = new Wait();
-
-        public void SearchInputSendKeys(String text)
-        {
-            SearchInput.SendKeys(text);
-        }
-
+        public WebElement CleanSearchInputButton = new WebElement(By.XPath(CleanSearchInputXPathLocator));
+      
         public void EnterButtonEmulate()
         {
             SearchInput.SendKeys(Keys.Enter);
-        }
-
-        public string GetNoResultSearchMessage()
-        {
-            wait.IsElementPresense(By.XPath(NoResultMessageXPathLocator), timeout);
-            return NoResultMessage.GetText();
-        }
-
-        public void ClickCleanSearcInputButton()
-        {
-            CleanSearchInputButton.Click();
-        }
-
-        public string GetSearchInputValue()
-        {
-            return SearchInput.GetText();
         }
     }
 }

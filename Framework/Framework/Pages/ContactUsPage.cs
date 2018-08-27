@@ -21,55 +21,14 @@ namespace Framework.Pages
 
         private static readonly string SendMessageButtonCSSLocator = "#contact-form-submit";
 
-        private WebElement InputName = new WebElement(By.CssSelector(InputNameCSSLocator));
-        private WebElement InputEmail = new WebElement(By.CssSelector(InputEmailCSSLocator));
-        private WebElement InputTheme = new WebElement(By.CssSelector(InputThemeCSSLocator));
-        private WebElement InputMessgae = new WebElement(By.CssSelector(InputMessageCSSLocator));
+        public WebElement InputName = new WebElement(By.CssSelector(InputNameCSSLocator));
+        public WebElement InputEmail = new WebElement(By.CssSelector(InputEmailCSSLocator));
+        public WebElement InputTheme = new WebElement(By.CssSelector(InputThemeCSSLocator));
+        public WebElement InputMessgae = new WebElement(By.CssSelector(InputMessageCSSLocator));
         
-        private WebElement InvalidEmailMessage = new WebElement(By.XPath(InvalidEmailMessageXPathLocator));
-        private WebElement InvalidFieldsMessage = new WebElement(By.CssSelector(InvalidFieldsMessageCSSLocator));
+        public WebElement InvalidEmailMessage = new WebElement(By.XPath(InvalidEmailMessageXPathLocator));
+        public WebElement InvalidFieldsMessage = new WebElement(By.CssSelector(InvalidFieldsMessageCSSLocator));
 
-        private WebElement SendMessageButton = new WebElement(By.CssSelector(SendMessageButtonCSSLocator));
-
-        private TimeSpan timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
-
-        private Wait wait = new Wait();
-
-        public void TypeName(string name)
-        {
-            InputName.SendKeys(name);
-        }
-
-        public void TypeEmail(string email)
-        {
-            InputEmail.SendKeys(email);
-        }
-
-        public void TypeTheme(string theme)
-        {
-            InputTheme.SendKeys(theme);
-        }
-
-        public void TypeMessage(string message)
-        {
-            InputMessgae.SendKeys(message);
-        }
-
-        public void ClickSendMessageButton()
-        {
-            SendMessageButton.Click();
-        }
-
-        public string GetInvalidEmailMessage()
-        {
-            wait.IsElementPresense(By.XPath(InvalidEmailMessageXPathLocator), timeout);
-            return InvalidEmailMessage.GetText();
-        }
-
-        public string GetInvalidFieldsMessage()
-        {
-            wait.IsElementPresense(By.CssSelector(InvalidFieldsMessageCSSLocator), timeout);
-            return InvalidFieldsMessage.GetText();
-        }
+        public WebElement SendMessageButton = new WebElement(By.CssSelector(SendMessageButtonCSSLocator));
     }
 }

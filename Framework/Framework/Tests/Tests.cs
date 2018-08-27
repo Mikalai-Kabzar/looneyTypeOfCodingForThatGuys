@@ -2,12 +2,14 @@
 using Framework.Services;
 using Framework.UI;
 using log4net;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using System.Net;
 
 namespace Tests
 {
     [TestFixture]
+    [AllureNUnit]
     public class Tests
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(Tests));
@@ -31,6 +33,7 @@ namespace Tests
 
         SearchPage SearchPage = new SearchPage();
         Service SearchService = new Service();
+        Wait wait = new Wait();
         Service Service = new Service();
 
         [SetUp]
@@ -39,20 +42,20 @@ namespace Tests
             log.Info("Test starting...");
         }
 
-        //[Test]
-        //public void GetMessageThatSearchHasNoResults()
-        //{
-        //    SearchService.GetMessageThatSearchHasNoResults(InvalidText, _url);
+        [Test]
+        public void GetMessageThatSearchHasNoResults()
+        {
+            SearchService.GetMessageThatSearchHasNoResults(InvalidText, _url);
 
-        //    Assert.That(SearchPage.GetNoResultSearchMessage, Is.EqualTo(_message));
-        //}
+            Assert.That(SearchPage.NoResultMessage.GetText, Is.EqualTo(_message));
+        }
 
         //[Test]
         //public void GetMessageThatSearchHasNoResultsFail()
         //{
         //    SearchService.GetMessageThatSearchHasNoResults(InvalidText, _url);
 
-        //    Assert.That(SearchPage.GetNoResultSearchMessage, Is.Empty);
+        //    Assert.That(SearchPage.NoResultMessage.GetText, Is.Empty);
         //}
 
         //[Test]
@@ -82,7 +85,7 @@ namespace Tests
         //[Test]
         //public void VerifyInvalidFieldsMessage()
         //{
-        //    Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch), 
+        //    Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch),
         //        Is.EqualTo(_invalidFieldsMessage));
         //}
 
@@ -93,11 +96,11 @@ namespace Tests
         //        Is.EqualTo(_invalidFieldsMessageRu));
         //}
 
-        [Test]
-        public void VerifyEmptySearchInput()
-        {
-            Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
-        }
+        //[Test]
+        //public void VerifyEmptySearchInput()
+        //{
+        //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
+        //}
 
         //[Test]
         //public void VerifyEmptySearchInputFail()
@@ -105,26 +108,11 @@ namespace Tests
         //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.EqualTo(InvalidText));
         //}
 
-        [TearDown]
+    [TearDown]
         public void CloseBrowser()
         {
             log.Info("Test ending...");
             Browser.Instance.StopBrowser();
         }
-
-        //[Test]
-        //public void test()
-        //{
-        //    var webClient = new NHtmlUnit.WebClient(BrowserVersion.EDGE);
-
-        //    webClient.Options.JavaScriptEnabled = false;
-        //    webClient.Options.ActiveXNative = false;
-        //    webClient.Options.CssEnabled = false;
-
-        //    var page = webClient.GetHtmlPage("http://wikipedia.org");
-        //    var anchor = page.GetFirstByXPath("//a");
-
-        //    Assert.That(anchor, Is.TypeOf<NHtmlUnit.Html.HtmlAnchor>());
-        //}
     }
 }
