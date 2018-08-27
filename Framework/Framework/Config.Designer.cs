@@ -25,7 +25,7 @@ namespace Framework {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CHROME")]
+        [global::System.Configuration.DefaultSettingValueAttribute("PHANTOMJS")]
         public string Browser {
             get {
                 return ((string)(this["Browser"]));

@@ -44,7 +44,7 @@ namespace Framework.UI
                             options = new FirefoxOptions();
                             break;
                         case "PHANTOMJS":
-                            browser = Driver.EDGE;
+                            browser = Driver.PHANTOMJS;
                             options = new PhantomJSOptions();
                             break;
                         default:

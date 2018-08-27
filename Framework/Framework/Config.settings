@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Browser" Type="System.String" Scope="User">
-      <Value Profile="(Default)">CHROME</Value>
+      <Value Profile="(Default)">PHANTOMJS</Value>
     </Setting>
     <Setting Name="timeout" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10000</Value>

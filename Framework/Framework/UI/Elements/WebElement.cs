@@ -14,6 +14,7 @@ namespace Framework.UI.Elements
         private readonly Logger _logger;
 
         Wait wait = new Wait();
+        TimeSpan timeout = TimeSpan.FromMilliseconds(Config.Default.timeout);
 
         public IWebElement BrowserElement => Browser.Instance.FindElement(Selector);
 
@@ -44,6 +45,7 @@ namespace Framework.UI.Elements
         public string GetText()
         {
             _logger.Info($"Get text of element {Selector}");
+            wait.IsElementPresense(Selector, timeout);
             return BrowserElement.Text;
         }
     }

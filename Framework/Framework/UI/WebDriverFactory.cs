@@ -21,7 +21,7 @@ namespace Framework.UI
                     return new ChromeDriver(ChromeDriverService.CreateDefaultService(directory), options as ChromeOptions, timeout);
                 case Driver.FIREFOX:
                     return new FirefoxDriver(FirefoxDriverService.CreateDefaultService(directory), options as FirefoxOptions, timeout);
-                case Driver.EDGE:
+                case Driver.PHANTOMJS:
                     return new PhantomJSDriver(PhantomJSDriverService.CreateDefaultService(directory), options as PhantomJSOptions, timeout);
             }
             return null;

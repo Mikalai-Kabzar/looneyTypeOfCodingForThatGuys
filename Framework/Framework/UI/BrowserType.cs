@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Framework.UI
 {
     public class BrowserType
@@ -12,7 +7,7 @@ namespace Framework.UI
         {
             CHROME,
             FIREFOX,
-            EDGE
+            PHANTOMJS
         }
     }
 }

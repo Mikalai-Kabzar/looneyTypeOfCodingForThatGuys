@@ -50,65 +50,65 @@ namespace Tests
             Assert.That(SearchPage.NoResultMessage.GetText, Is.EqualTo(_message));
         }
 
-        //[Test]
-        //public void GetMessageThatSearchHasNoResultsFail()
-        //{
-        //    SearchService.GetMessageThatSearchHasNoResults(InvalidText, _url);
+        [Test]
+        public void GetMessageThatSearchHasNoResultsFail()
+        {
+            SearchService.GetMessageThatSearchHasNoResults(InvalidText, _url);
 
-        //    Assert.That(SearchPage.NoResultMessage.GetText, Is.Empty);
-        //}
+            Assert.That(SearchPage.NoResultMessage.GetText, Is.Empty);
+        }
 
-        //[Test]
-        //public void CheckChangeLanguage()
-        //{
-        //    Assert.That(Service.GetItemName(_url), Is.EqualTo(_testLangChange));
-        //}
+        [Test]
+        public void CheckChangeLanguage()
+        {
+            Assert.That(Service.GetItemName(_url), Is.EqualTo(_testLangChange));
+        }
 
-        //[Test]
-        //public void CheckChangeLanguageFail()
-        //{
-        //    Assert.That(Service.GetItemName(_url), Is.EqualTo(_testLangChangeEn));
-        //}
+        [Test]
+        public void CheckChangeLanguageFail()
+        {
+            Assert.That(Service.GetItemName(_url), Is.EqualTo(_testLangChangeEn));
+        }
 
-        //[Test]
-        //public void VerifyInvalidEmailMessage()
-        //{
-        //    Assert.That(Service.GetInvalidEmailErrorMessage(_url, InvalidText), Is.EqualTo(_invalidEmailMessage));
-        //}
+        [Test]
+        public void VerifyInvalidEmailMessage()
+        {
+            Assert.That(Service.GetInvalidEmailErrorMessage(_url, InvalidText), Is.EqualTo(_invalidEmailMessage));
+        }
 
-        //[Test]
-        //public void VerifyInvalidEmailMessageFail()
-        //{
-        //    Assert.That(Service.GetInvalidEmailErrorMessage(_url, InvalidText), Is.EqualTo(_invalidEmailMessageRu));
-        //}
+        [Test]
+        public void VerifyInvalidEmailMessageFail()
+        {
+            Assert.That(Service.GetInvalidEmailErrorMessage(_url, InvalidText), Is.EqualTo(_invalidEmailMessageRu));
+        }
 
-        //[Test]
-        //public void VerifyInvalidFieldsMessage()
-        //{
-        //    Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch),
-        //        Is.EqualTo(_invalidFieldsMessage));
-        //}
+        [Test]
+        public void VerifyInvalidFieldsMessage()
+        {
+            Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch),
+                Is.EqualTo(_invalidFieldsMessage));
+        }
 
-        //[Test]
-        //public void VerifyInvalidFieldsMessageFail()
-        //{
-        //    Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch),
-        //        Is.EqualTo(_invalidFieldsMessageRu));
-        //}
+        [Test]
+        public void VerifyInvalidFieldsMessageFail()
+        {
+            Assert.That(Service.GetInvalidFieldsErrorMessage(_url, _name, _email, InvalidText, ValidTextForSearch),
+                Is.EqualTo(_invalidFieldsMessageRu));
+        }
 
-        //[Test]
-        //public void VerifyEmptySearchInput()
-        //{
-        //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
-        //}
+        [Test]
+        public void VerifyEmptySearchInput()
+        {
+            Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.Empty);
+        }
 
-        //[Test]
-        //public void VerifyEmptySearchInputFail()
-        //{
-        //    Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.EqualTo(InvalidText));
-        //}
+        [Test]
+        public void VerifyEmptySearchInputFail()
+        {
+            Assert.That(Service.CleanSearchInput(_url, InvalidText), Is.EqualTo(InvalidText));
+        }
 
-    [TearDown]
+        [TearDown]
         public void CloseBrowser()
         {
             log.Info("Test ending...");
