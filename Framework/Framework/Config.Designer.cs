@@ -37,7 +37,7 @@ namespace Framework {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("30000")]
         public int timeout {
             get {
                 return ((int)(this["timeout"]));

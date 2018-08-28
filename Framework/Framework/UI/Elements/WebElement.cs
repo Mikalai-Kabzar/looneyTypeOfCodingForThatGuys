@@ -33,6 +33,7 @@ namespace Framework.UI.Elements
         public void Click()
         {
             _logger.Info($"Click element {Selector}");
+            //wait.IsElementPresense(Selector, TimeSpan.FromMilliseconds(Config.Default.timeout));
             BrowserElement.Click();
         }
 
@@ -45,7 +46,7 @@ namespace Framework.UI.Elements
         public string GetText()
         {
             _logger.Info($"Get text of element {Selector}");
-            wait.IsElementPresense(Selector, timeout);
+            //wait.IsElementPresense(Selector, timeout);
             return BrowserElement.Text;
         }
     }

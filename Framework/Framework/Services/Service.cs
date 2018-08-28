@@ -20,7 +20,6 @@ namespace Framework.Services
         public string GetItemName(string url)
         {
             MainPage.Navigate(url);
-            //MainPage.ClickChangeLanguageEnglish();
             MainPage.RussianLanguageChangeItem.Click();
             return MainPage.ItemName.GetText();
         }
